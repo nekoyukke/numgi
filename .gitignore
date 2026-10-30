@@ -1,0 +1,7 @@
+.nagi/
+.build/
+
+.vscode/
+.env
+.env.local
+.native-target/
