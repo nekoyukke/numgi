@@ -1,0 +1,4 @@
+
+
+class Degree:
+    angle: f64

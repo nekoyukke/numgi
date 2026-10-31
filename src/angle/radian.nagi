@@ -1,0 +1,3 @@
+
+class Radian:
+    angle: f64
