@@ -4,21 +4,17 @@ import "../conv/2number.nagi"
 import "../conv/2f64.nagi"
 
 def factorial(value:f64) -> f64:
-    x = value
     y:f64 = 1.0
-    z = round_magic(x)
-    while z>0.0:
-        y *= z
+    x = round_magic(value)
+    while x>0.0:
+        y *= x
         x -= 1.0
-        z = round_magic(x)
     return y
 
 def factorial_i32(value:i64) -> f64:
-    x = int_to_float(value)
     y:f64 = 1.0
-    z = round_magic(x)
-    while z>0.0:
-        y *= z
+    x = round_magic(int_to_float(value))
+    while x>0.0:
+        y *= x
         x -= 1.0
-        z = round_magic(x)
     return y

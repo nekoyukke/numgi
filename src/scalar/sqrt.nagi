@@ -4,11 +4,6 @@ def sqrt(x:f64) -> f64:
 
     y = x
 
-    while True:
-        next = (y + x / y) / 2.0
-
-        if (next - y)*(next - y) < 0.0004:
-            return next
-
-        y = next
+    for i in range(60):
+        y = (y + x / y) / 2.0
     return y

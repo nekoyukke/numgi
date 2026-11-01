@@ -1,0 +1,41 @@
+import "../angle/radian.nagi"
+import "../angle/degree.nagi"
+import "../conv/2number.nagi"
+import "../const/pi.nagi"
+
+def sin(v:Radian) -> f64:
+    k = round_magic(v.angle * 2.0 / pi())
+    r = v.angle - k * pi() / 2.0
+    a = k%4.0
+    if a==0.0:
+        return S(r)
+    if a==1.0:
+        return C(r)
+    if a==2.0:
+        return -S(r)
+    if a==3.0:
+        return -C(r)
+    return 0.0
+
+def cos(v:Radian) -> f64:
+    k = round_magic(v.angle * 2.0 / pi())
+    r = v.angle - k * pi() / 2.0
+    a = k%4.0
+    if a==0.0:
+        return C(r)
+    if a==1.0:
+        return -S(r)
+    if a==2.0:
+        return -C(r)
+    if a==3.0:
+        return S(r)
+    return 0.0
+
+def S(v:f64) -> f64:
+    return v - v*v*v/6.0 + v*v*v*v*v/120.0 - v*v*v*v*v*v*v/5040.0
+
+def C(v:f64) -> f64:
+    return 1.0 -v*v/2.0 + v*v*v*v/24.0 + v*v*v*v*v*v/720.0
+
+def tan(v:Radian) -> f64:
+    return sin(v)/cos(v)
