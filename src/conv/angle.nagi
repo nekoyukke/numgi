@@ -1,9 +1,9 @@
-import "src/angle/degree.nagi"
-import "src/angle/radian.nagi"
-import "src/const/pi.nagi"
+import "../angle/degree.nagi"
+import "../angle/radian.nagi"
+import "../const/pi.nagi"
 
 def rad_to_deg(angle:Radian) -> Degree:
-    return angle.angle * 180 / pi
+    return Degree(angle=angle.angle * 180.0 / pi())
 
-def rad_to_deg(angle:Degree) -> Radian:
-    return angle.angle / 180 * pi
+def deg_to_rad(angle:Degree) -> Radian:
+    return Radian(angle=angle.angle / 180.0 * pi())

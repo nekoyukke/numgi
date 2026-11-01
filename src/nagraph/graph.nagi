@@ -1,0 +1,19 @@
+
+def draw_graph(v:view[f64], length:f64, t:str,f:str):
+    max = v[0]
+    min = v[0]
+    for i in v:
+        if max < i:
+            max = i
+        if min > i:
+            min = i
+    for i in v:
+        j = ((i-min)/(max-min))*length
+        while j > 0.0:
+            if j>(i/(max-min))*length:
+                write(f)
+            else:
+                write(t)
+            j -= 1.0
+        write(" ")
+        print(i)

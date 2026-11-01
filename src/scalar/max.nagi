@@ -1,0 +1,13 @@
+def max_f64(v:view[f64]) -> f64:
+    max = v[0]
+    for i in v:
+        if max < i:
+            max = i
+    return max
+
+def max_i64(v:view[i64]) -> i64:
+    max = v[0]
+    for i in v:
+        if max < i:
+            max = i
+    return max

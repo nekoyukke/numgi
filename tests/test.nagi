@@ -3,20 +3,10 @@ import "../src/lib.nagi"
 
 def main() -> i32:
     print("hello numgi")
-    print("exp 1")
-    print(exp(1.0))
-    print("ln 2.7")
-    print(ln(2.7))
-    print("ln exp 1")
-    print(ln(exp(1.0)))
-    print("sqrt 2")
-    print(sqrt(2.0))
-    print("5!")
-    print(factorial(5.0))
-    print("sin pi")
-    print(sin(Radian(angle=pi())))
-    print("cos pi")
-    print(cos(Radian(angle=pi())))
-    print("tan pi")
-    print(cos(Radian(angle=pi())))
+    list:List[f64] = []
+    for i in range(80):
+        append(list, cos(deg_to_rad(Degree(angle=int_to_float(i*7)))))
+        
+    draw_graph(view(list), 30.0, "#", ".")
+
     return 0
