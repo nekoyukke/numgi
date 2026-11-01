@@ -1,4 +1,0 @@
-import "src/angle/degree.nagi"
-import "src/angle/radian.nagi"
-
-def rad_to_deg(Radian)

@@ -1,0 +1,15 @@
+import "../const/e.nagi"
+import "pow.nagi"
+import "../const/ln2.nagi"
+import "../conv/2number.nagi"
+import "factorial.nagi"
+
+def exp(value: f64) -> f64:
+    k = round_magic(value / ln2())
+    return pow2(k) * exp_minln2(value - k*ln2())
+
+def exp_minln2(value:f64) -> f64:
+    res:f64 = 0.0
+    for i in range(50):
+        res += pow(value, i) / factorial_i32(i)
+    return res

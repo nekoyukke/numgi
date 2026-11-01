@@ -1,0 +1,12 @@
+def round_magic(x: f64) -> f64:
+    magic:f64 = 6755399441055744.0;
+    return (x + magic) - magic
+
+
+def round_up_magic(x: f64) -> f64:
+    magic:f64 = 6755399441055744.0;
+    return (x + 0.5 + magic) - magic
+
+def floor_magic(x: f64) -> f64:
+    magic:f64 = 6755399441055744.0;
+    return (x - 0.5 + magic) - magic
